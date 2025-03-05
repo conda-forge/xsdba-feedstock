@@ -39,6 +39,8 @@ requirements:
     - typer >=0.12.3
     - xarray >=2023.11.0
     - yamale >=5.0.0
+run_constrained:
+    - xclim >=0.55.1
 
 test:
   imports:
@@ -54,6 +56,7 @@ test:
     - pooch >=1.8.0
     - pytest >=8.0.0
     - pytest-xdist >=3.2
+    - xclim >=0.55.1
     - xdoctest >=1.1.5
   source_files:
     - tests
