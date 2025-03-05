@@ -21,7 +21,7 @@ requirements:
   host:
     - python {{ python_min }}
     - flit-core >=3.10.1,<4
-    - pip >=24.2.0
+    - pip >=25.0
   run:
     - python >={{ python_min }}
     - boltons >=20.1
@@ -48,14 +48,16 @@ test:
   commands:
     - pip check
     - xsdba
-    - python -m pytest --numprocesses=auto --dist=loadscope tests
+    - python -m pytest --numprocesses=auto tests
   requires:
     - python {{ python_min }}
+    - coverage >=7.5.0
     - filelock >=3.14.0
-    - pip >=24.2.0
+    - pip >=25.0
     - pooch >=1.8.0
-    - pytest >=8.0.0
-    - pytest-xdist >=3.2
+    - pytest >=8.0.0,<9.0.0
+    - pytest-cov >=5.0.0
+    - pytest-xdist >=3.2.0
     - xclim >=0.55.1
     - xdoctest >=1.1.5
   source_files:
