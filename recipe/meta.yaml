@@ -39,7 +39,7 @@ requirements:
     - typer >=0.12.3
     - xarray >=2023.11.0
     - yamale >=5.0.0
-run_constrained:
+  run_constrained:
     - xclim >=0.55.1
 
 test:
