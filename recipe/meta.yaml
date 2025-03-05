@@ -1,5 +1,5 @@
 {% set name = "xsdba" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xsdba-{{ version }}.tar.gz
-  sha256: 589d8886f27aea66085ffbbcdd395d911095d2451fd76dc3eeea1c86c0dc4184
+  sha256: 9852968e57aff98aab419551b82d23d177533294090c72461d01c8571453f493
 
 build:
   entry_points:
@@ -20,8 +20,8 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3.9,<4
-    - pip >=24.2.0
+    - flit-core >=3.10.1,<4
+    - pip >=25.0
   run:
     - python >={{ python_min }}
     - boltons >=20.1
@@ -38,8 +38,9 @@ requirements:
     - statsmodels >=0.14.2
     - typer >=0.12.3
     - xarray >=2023.11.0
-    - xclim >=0.53.2,<0.55 # temporary until xsdba v3.0
     - yamale >=5.0.0
+  run_constrained:
+    - xclim >=0.55.1
 
 test:
   imports:
@@ -47,17 +48,20 @@ test:
   commands:
     - pip check
     - xsdba
-    - python -m pytest --numprocesses=auto --dist=loadscope tests
+    - python -m pytest --numprocesses=auto tests
   requires:
     - python {{ python_min }}
+    - coverage >=7.5.0
     - filelock >=3.14.0
-    - netcdf4 # temporary until xsdba v3.0
-    - pip >=24.2.0
+    - pip >=25.0
     - pooch >=1.8.0
-    - pytest >=8.0.0
-    - pytest-xdist >=3.2
+    - pytest >=8.0.0,<9.0.0
+    - pytest-cov >=5.0.0
+    - pytest-xdist >=3.2.0
+    - xclim >=0.55.1
     - xdoctest >=1.1.5
   source_files:
+    - pyproject.toml
     - tests
 
 about:
