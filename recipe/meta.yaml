@@ -1,5 +1,5 @@
 {% set name = "xsdba" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xsdba-{{ version }}.tar.gz
-  sha256: ad1c91449208fd8e7b65fcf6d5d8182e9e730ed9e556a3faa06ae43ab2bf8b4e
+  sha256: de23c0e72624a67ba2bb6ab6d7524341e718d61ceee19ec5d7af028a6d48e9bc
 
 build:
   entry_points:

@@ -155,6 +155,3 @@ Feedstock Maintainers
 * [@Zeitsperre](https://github.com/Zeitsperre/)
 * [@coxipi](https://github.com/coxipi/)
 
-
-<!-- dummy commit to enable rerendering -->
-
