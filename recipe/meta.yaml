@@ -32,7 +32,7 @@ requirements:
     - filelock >=3.14.0
     - jsonpickle >=3.1.0
     - numba >=0.57.0
-    - numpy >=1.24.0
+    - numpy >=1.25.0
     - packaging
     - pandas >=2.2.0
     - pint >=0.24.4
