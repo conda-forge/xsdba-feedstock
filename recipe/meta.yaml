@@ -1,5 +1,5 @@
 {% set name = "xsdba" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xsdba-{{ version }}.tar.gz
-  sha256: de23c0e72624a67ba2bb6ab6d7524341e718d61ceee19ec5d7af028a6d48e9bc
+  sha256: 7c216720112eda0ee2061c5f45e33eef5b8f4c7aad39861fafcae11271946f48
 
 build:
   entry_points:
@@ -32,7 +32,7 @@ requirements:
     - filelock >=3.14.0
     - jsonpickle >=3.1.0
     - numba >=0.57.0
-    - numpy >=1.24.0
+    - numpy >=1.25.0
     - packaging
     - pandas >=2.2.0
     - pint >=0.24.4
