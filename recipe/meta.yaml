@@ -1,14 +1,13 @@
 {% set name = "xsdba" %}
-{% set version = "0.7.0" %}
-{% set python_min = "3.10" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xsdba-{{ version }}.tar.gz
-  sha256: 9fa47be804b4a478c761517504a99499c1d0fedfb231846d7843b24f04e28b5f
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/xsdba-{{ version }}.tar.gz
+  sha256: 986c08d5c7a3f4d5ce2247e729c96f4859bc9f60673cc8c4578fad5ddb708df7
 
 build:
   entry_points:
@@ -20,8 +19,8 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3.11.0,<4.0
-    - pip >=25.2
+    - flit-core >=4.0,<5.0
+    - pip
   run:
     - python >={{ python_min }}
     - boltons >=20.1
@@ -31,21 +30,21 @@ requirements:
     - dask-core >=2024.8.1
     - filelock >=3.14.0
     - jsonpickle >=3.1.0
-    - matplotlib-base >=3.8.0
-    - numba >=0.58.1
-    - numpy >=1.26.0
+    - matplotlib-base >=3.10.0
+    - numba >=0.61.2
+    - numpy >=2.2.0
     - packaging
-    - pandas >=2.2.0
+    - pandas >=2.3.0
     - pint >=0.24.4
-    - rich >=13.7.0
-    - scipy >=1.11.0
-    - statsmodels >=0.14.2
+    - rich >=14.3.0
+    - scipy >=1.15.0,<1.18
+    - statsmodels >=0.14.6
     - typer >=0.24.1
-    - xarray >=2023.11.0
+    - xarray >=2024.11.0
   run_constrained:
     - fastnanquantile >=0.0.2
     - pot >=0.9.4
-    - xclim >=0.56.0
+    - xclim >=1.0.0
 
 test:
   imports:
@@ -64,7 +63,7 @@ test:
     - pytest >=9.0.2
     - pytest-cov >=7.0.0
     - pytest-xdist >=3.2.0
-    - xclim >=0.56.0
+    - xclim >=1.0.0
     - xdoctest >=1.1.5
   source_files:
     - pyproject.toml
